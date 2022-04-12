@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Card Game</title>
+    <h1>Higher or Lower</h1>
+    <style>
+        #form{
+            background-color:lightgrey;
+            border-radius:5px;
+            border: outset;
+            padding:20px;
+            width:400px;
+        }
+        #start {
+            object-position:right top;
+        }
+        .table{
+            border: 1px solid black;
+            padding: 3px;
+            width: 500px;
+            height:250px;
+            margin-left:10px;
+            float:right;
+        }
+        th{
+            background-color:gold;
+            border: 1px solid black;
+        }
+        td{
+            border: 1px solid black;
+        }
+        #start, #quit{
+            width:110px;
+            height:90px;
+            font-size:30px;
+            border-radius: 20%;
+            background-color: beige;
+        }
+        #higher, #lower, #skip, #hint{
+            width: 90px;
+            height:50px;
+            background-color: beige;
+            font-size:20px;
+            border-radius: 20%;
+        }
+        #start:hover, #higher:hover, #lower:hover, #skip:hover, #quit:hover, #hint:hover{
+            background-color: gold;
+        }
+        #score{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <script src="P1_cardGame.js"></script>
+    <table class="table">
+        <tr>
+            <th>Deck</th>
+            <th>Score</th>
+            <th>Guesses</th>
+            <th>Date</th>
+        </tr>
+        <tr>
+            <td>Full Deck</td>
+            <td id="fullHighest"></td>
+            <td id="fullGuess"></td>
+            <td id="fullDate"></td>
+        </tr>
+        <tr>
+            <td>Hearts Deck</td>
+            <td id="heartHighest"></td>
+            <td id="heartGuess"></td>
+            <td id="heartDate"></td>
+        </tr>
+    </table> 
+    <div id="form">
+        <button id='start' onclick="start()">Start</button> <!–– Why can't it be put in form tag? ––>
+        <button id='quit' onclick="quit()">Quit</button>
+        <h3 id="heading">Choose which deck you want to play with:</h3>
+        <input type="radio" id="full" name="deck" value="fullDeck">
+        <label for="full">Full Deck</label><br>
+        <input type="radio" id="heart" name="deck" value="heartDeck">
+        <label for="heart">Heart Deck</label>
+    </div>
+    <p id="img">
+    </p>
+    <div id='score'>Score:0</div>
+    <button id='higher'>Higher</button>
+    <button id='lower'>Lower</button>
+    <button id='skip'>Skip</button>
+    <button id='hint'>Hint</button>
+</body>
+</html>
